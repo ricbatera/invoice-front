@@ -1,0 +1,89 @@
+<div class="form">
+    <form>
+        <div class="grupo1">
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nome do Boleto</mat-label>
+                    <input matInput placeholder="Exemplo, Multiplan, Sabesp, Allos e etc." [formControl]="novoBoleto">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Tipo de Boleto</mat-label>
+                    <select matNativeControl [formControl]="tipoBoleto">
+                      <option value="BOLETO_COMUM_COM_ITENS">Boleto Comum com Itens</option>
+                      <option value="BOLETO_COMUM_SEM_ITENS">Boleto Comum sem Itens</option>
+                      <option value="SERVICOS">Boleto de Serviços</option>
+                      
+                    </select>
+                  </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Padrão de busca de boleto</mat-label>
+                    <input matInput placeholder="separe com ',' para mais de 1 padrão" [formControl]="padraoBuscaBoleto">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="itens">
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Area de Busca ou nome do item</mat-label>
+                    <input matInput placeholder="Ex: Documento, Linha Digitável, Ar Condicionado etc" [formControl]="areaBusca">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Padrao identificador</mat-label>
+                    <input matInput placeholder="Algum item no boleto usado par identificá-lo" [formControl]="padraoBuscaBoleto2">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Regex</mat-label>
+                    <input matInput placeholder="Expressão regular" [formControl]="regex">
+                </mat-form-field>
+            </div>
+            <div class="coodenadas">
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>X</mat-label>
+                        <input matInput placeholder="X" [formControl]="x">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Y</mat-label>
+                        <input matInput placeholder="Y" [formControl]="y">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Largura</mat-label>
+                        <input matInput placeholder="Witdh" [formControl]="width">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Altura</mat-label>
+                        <input matInput placeholder="Heigth" [formControl]="height">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div>
+                <button (click)="adiciona()" type="button">Adcionar</button>
+            </div>
+        </div>
+        <div class="itens2"></div>
+        
+        <div>
+            <button (click)="envia()" type="button">Enviar</button>
+        </div>
+    </form>
+</div>
+<div class="temp">
+    <p>{{p | json}}</p>
+</div>
+<div class="temp">
+    <p>{{itens | json}}</p>
+</div>
